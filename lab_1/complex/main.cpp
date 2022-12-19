@@ -9,6 +9,12 @@ private:
     float img;
 
 public:
+    complexe ()
+    {
+        cout << "start the program" << "\n";
+        real=0;
+        img=0;
+    }
     void setreal (float r)
     {
         if (r >=0)
@@ -39,7 +45,7 @@ public:
         }
         else
         {
-            cout << "your compex number is "<< real << "-" << img << "i" << "\n";
+            cout << "your complex number is "<< real << "-" << img << "i" << "\n";
 
         }
     }
@@ -57,10 +63,15 @@ public:
            temp.img = img + mycomp2.img;
            return temp;
        }
+       ~complexe()
+       {
+           cout << "end of program good bye" << "\n" ;
+       }
 };
 int main()
 {
     complexe mycomp1 , mycomp2 , resultcomp;
+    complexe mycomp1;
      float x;
      float y;
       float a;
