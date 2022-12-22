@@ -1,7 +1,7 @@
 #include <iostream>
 #include "header.h"
 using namespace std;
-
+/*
 int main()
 {
     //how to graphic
@@ -17,4 +17,22 @@ int main()
 
 //            pic1.paint();
     return 0;
+}
+*/
+//-----------------------------------------------------------
+
+int main()
+{ Picture pic1;
+//example on dynamic allocation, using temporary objects (on the fly)
+Line * larr ;
+Rect * rarr ;
+Circle * carr ;
+larr = new Line[2] ;
+larr[0] = Line(420,50,300,300) ;
+larr[1] = Line(40,500,500,400) ;
+pic1.setCircle(3,carr) ;
+pic1.setrect(2,rarr) ;
+pic1.setline(2,larr) ;
+//myPic.print() ;
+delete[] larr ;
 }

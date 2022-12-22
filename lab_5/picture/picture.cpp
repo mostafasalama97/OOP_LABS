@@ -1,3 +1,4 @@
+#include <iostream>
 #include "header.h"
 using namespace std;
 
@@ -8,6 +9,10 @@ point::point() //default constructor
                 cout<< "point default constructor" << endl;
             }
 point::point(int m, int n) //overloading constructor
+{
+    x=m;
+    y=n;
+}
 
     //setter method
 void point::setx(int m)
@@ -37,25 +42,27 @@ point::~point()
 //--------------------------------------------------------------
 //line class methods
 
-line::line() : start() , end() //constructor
+Line::Line():p1(),p2() //constructor
     {
-        cout<< "line default constructor" << endl;
-    }
-line::line(int x1, int y1, int x2, int y2) : start(int x1, int y1), end(int x2, int y2)
-    {
-        cout<< "line overloading constructor" << endl;
-    }
-void line::draw() //built in function for line drawing
-    {
-        line(start.getx(), start.gety(), end.getx(), end.gety());
-    }
-     //destructor
-line::~line()
-    {
-        cout<< "line destructor" << endl;
+        cout<< "Line default constructor" << endl;
     }
 
-};
+
+Line::Line(int x1, int y1, int x2, int y2): p1(x1,y1), p2(x2,y2)
+    {
+        cout<< "Line overloading constructor" << endl;
+    }
+
+
+/*void Line::draw() //built in function for Line drawing
+    {
+        Line(p1.getx(), p1.gety(), p2.getx(), p2.gety());
+    }*/
+     //destructor
+Line::~Line()
+    {
+        cout<< "Line destructor" << endl;
+    }
 
 //=====================================================================================
 
@@ -67,21 +74,20 @@ Rect::Rect() : ul() , lr() //constructor
     {
         cout<< "Rect default constructor" << endl;
     }
-Rect::Rect(int x1, int y1, int x2, int y2) : ul(int x1, int y1), lr(int x2, int y2)
+Rect::Rect(int x1, int y1, int x2, int y2) : ul(x1,y1), lr(x2,y2)
     {
                 cout<< "Rect overloading constructor" << endl;
     }
-void Rect::draw() //built in function for Rect drawing
+/*void Rect::draw() //built in function for Rect drawing
     {
         rectangle(ul.getx(), ul.gety(), lr.getx(), lr.gety());
     }
-
+*/
     //destructor
-Rect::~Rect();
+Rect::~Rect()
     {
         cout<< "Rect destructor" << endl;
     }
-};
 
 //======================================================================
 // class circle methods
@@ -89,24 +95,23 @@ Rect::~Rect();
 
 Circle::Circle() : cp() //constructor
     {
-        rad = 0;
-        cout<< "Circle default constructor" << endl;
+        radius = 0;
+        cout << "Circle default constructor" << endl;
     }
 Circle::Circle(int m, int n, int r) : cp(m,n)
     {
-        rad = r;
+        radius = r;
         cout<< "Circle overloading constructor" << endl;
     }
-void Circle::draw() //built in function for Circle drawing
+/*void Circle::draw() //built in function for Circle drawing
     {
-        circle(cp.getx(), cp.gety(), lr.getx(),rad);
-    }
+        circle(cp.getx(), cp.gety(), lr.getx(),radius);
+    }*/
      //destructor
-Circle::~Circle();
+Circle::~Circle()
     {
         cout<< "Circle destructor" << endl;
     }
-};
 
 //=================================================================
 //picture class methods
@@ -125,11 +130,11 @@ Picture::Picture()
 
    //overloading constructor
 
-Picture::Picture(int cn, int rn, int ln, line *pl, Circle *pc, rect *pr)
+Picture::Picture(int cn, int rn, int ln, Circle *pc, Rect *pr, Line *pl)
     {
-    cNum = cn;
-    rNum = rn;
-    lNum = ln;
+    cNum = cn ;
+    rNum = rn ;
+    lNum = ln ;
     pline = pl;
     pCircle = pc;
     prect = pr;
@@ -141,17 +146,17 @@ void Picture::setCircle(int cr, Circle *cptr)
          cNum = cr;
         pCircle = cptr;
     }
-void Picture::setrect(int rc, rect *rptr)
+void Picture::setrect(int rc, Rect *rptr)
     {
          rNum = rc;
         prect = rptr;
     }
-void Picture::setline(int ln , line *lptr)
+void Picture::setline(int ln , Line *lptr)
     {
         lNum = ln;
         pline = lptr;
     }
-void Picture::paint()
+/*void Picture::paint()
 {
     int i;
     for(i=0 ; i<cNum ; i++)
@@ -169,3 +174,4 @@ void Picture::paint()
         pline[i].draw();
     }
 }
+*/
