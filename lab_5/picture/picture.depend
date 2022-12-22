@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1671707785 source:f:\oop\lab oop\lab_5\picture\main.cpp
+	<iostream>
+	"header.h"
+
+1671711213 f:\oop\lab oop\lab_5\picture\header.h
+
+1671711487 source:f:\oop\lab oop\lab_5\picture\picture1.cpp
+	<iostream>
+	"header.h"
+
