@@ -21,6 +21,8 @@ int main()
 */
 //-----------------------------------------------------------
 
+
+/*
 int main()
 { Picture pic1;
 //example on dynamic allocation, using temporary objects (on the fly)
@@ -36,3 +38,21 @@ pic1.setline(2,larr) ;
 //myPic.print() ;
 delete[] larr ;
 }
+
+
+*/
+//==================================================================================================
+
+int main()
+{ Picture myPic;
+//example on static allocation
+Circle carr[3]={Circle(50,50,50), Circle(200,100,100),
+Circle(420,50,30)};
+//example on static allocation, using temporary objects (on the fly)
+Rect rArr[2] ;
+rArr[0] = Rect(30,40,170,100) ;
+Point myP1(420,50) ;
+Point myP2(500,300) ;
+rArr[1] = Rect(myP1, myP2) ;
+
+

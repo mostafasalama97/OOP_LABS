@@ -16,16 +16,12 @@ public:
         size = s;
         stk = new int[size];
         counter ++;
-        cout << "From Constructor" << endl;
-        cout << "Count of objects = " << Stack::getCounter() << endl;
     }
 
     ~Stack()
     {
         delete[] stk;
         counter --;
-        cout << "From Destructor" << endl;
-        cout << "Count of objects = " << Stack::getCounter() << endl;
     }
 
     Stack(Stack &z);
@@ -40,30 +36,31 @@ public:
 
     friend void viewContent(Stack);
     friend void viewContentRef(Stack &);
+
+    Stack & operator = (const Stack & s);
 };
 int Stack::counter = 0;
 
 int main()
 {
-    cout << "Count of objects = " << Stack::getCounter() << endl;
     int size;
     cout << "Enter the size of stack = ";
     cin >> size;
-    Stack stk(size);
-    stk.Push(1);
-    stk.Push(2);
-    stk.Push(3);
-    stk.Push(4);
-    stk.Push(5);
-    stk.Push(6);
-    stk.Push(7);
-    stk.Push(8);
+    Stack stk1(size);
+    Stack stk2(size);
+    stk1.Push(1);
+    stk1.Push(2);
+    stk1.Push(3);
+    stk1.Push(4);
 
+    stk2.Push(5);
+    stk2.Push(6);
+    stk2.Push(7);
+    stk2.Push(8);
+    cout << stk2.Pop() << endl;
 
-    cout << "************* Day 3 ***************" <<endl;
-    viewContent(stk);
-    cout << endl;
-    //viewContentRef(stk);
+    stk2 = stk1;
+    cout << stk2.Pop();
     return 0;
 }
 
@@ -127,4 +124,17 @@ Stack::Stack(Stack &z)
     }
     counter ++;
     cout << "Count of objects = " << Stack::getCounter() << endl;
+}
+
+Stack &Stack::operator = (const Stack & s)
+{
+    delete[] this->stk;
+    this->top = s.top;
+    this->size = s.size;
+    this->stk = new int[size];
+    int i = 0;
+    for (i = 0; i < s.top + 1; i++)
+    {
+        this->stk[i] = s.stk[i];
+    }
 }
