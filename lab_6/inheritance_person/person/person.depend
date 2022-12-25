@@ -1,0 +1,43 @@
+# depslib dependency file v1.0
+1671949620 source:f:\oop\eldsouky\inheritance_person\person\person.cpp
+	"person.h"
+
+1671949431 f:\oop\eldsouky\inheritance_person\person\person.h
+	<string>
+	<iostream>
+
+1671956320 source:f:\oop\eldsouky\inheritance_person\person\main.cpp
+	<iostream>
+	"student.h"
+
+1671961502 f:\oop\eldsouky\inheritance_person\person\student.h
+	<string>
+	<iostream>
+	"person.h"
+
+1671961666 source:f:\oop\eldsouky\inheritance_person\person\student.cpp
+	"student.h"
+
+1671961904 source:f:\oop\eldsouky\inheritance_person\person\dstudent.cpp
+	"dstudent.h"
+
+1671961950 f:\oop\eldsouky\inheritance_person\person\dstudent.h
+	<string>
+	<iostream>
+	"student.h"
+
+1671949620 source:f:\oop\lab oop\lab_6\inheritance_person\person\person.cpp
+	"person.h"
+
+1671949431 f:\oop\lab oop\lab_6\inheritance_person\person\person.h
+	<string>
+	<iostream>
+
+1671961666 source:f:\oop\lab oop\lab_6\inheritance_person\person\student.cpp
+	"student.h"
+
+1671961502 f:\oop\lab oop\lab_6\inheritance_person\person\student.h
+	<string>
+	<iostream>
+	"person.h"
+
