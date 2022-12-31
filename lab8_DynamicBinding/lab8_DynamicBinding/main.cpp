@@ -37,10 +37,8 @@ public:
     {
         return dim2;
     }
-    float calculateArea()
-    {
-        return 0;
-    }
+    virtual float calculateArea() = 0; //pure virtual function
+
 };
 
 //=================================================
@@ -123,7 +121,7 @@ public:
 
 //=========================================================================
 
-/*float sumAreas (GeoShape *p1, GeoShape *p2, GeoShape *p3)
+/*float sumAreas (GeoShape *p1, GeoShape *p2, GeoShape *p3) //  stand alone function
 {
     return p1->calculateArea() + p2->calculateArea() + p3->calculateArea();
 }*/
